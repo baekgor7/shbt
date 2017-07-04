@@ -28,7 +28,7 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">회원가입</a></li>
+	        <li><a href="/form.html">회원가입</a></li>
 	        <li><a href="/list.html">사용자 목록</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
@@ -46,21 +46,13 @@
 				</tr>
 			</thead>
 		    <tbody>
-		      <tr>
-		        <td>John</td>
-		        <td>Doe</td>
-		        <td>john@example.com</td>
-		      </tr>
-		      <tr>
-		        <td>Mary</td>
-		        <td>Moe</td>
-		        <td>mary@example.com</td>
-		      </tr>
-		      <tr>
-		        <td>July</td>
-		        <td>Dooley</td>
-		        <td>july@example.com</td>
-		      </tr>
+		    	{{#users}}		    	
+				<tr>
+				  <td>{{userId}}</td>
+				  <td>{{userNm}}</td>
+				  <td>{{email}}</td>
+				</tr>
+				{{/users}}
 		    </tbody>
 		</table>
 	</div>
