@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.shbtboard.domain.User;
@@ -26,7 +27,6 @@ public class UserController {
 	@PostMapping("")
 	public String create(User user) {
 		
-		System.out.println("User=="+user);
 		userRepository.save(user);
 		return "redirect:/users";
 	}
@@ -38,10 +38,19 @@ public class UserController {
 		return "/user/list";
 	}
 	
-	@GetMapping("{id}/form")
+	@GetMapping("/{id}/form")
 	public String updateForm(@PathVariable Long id, Model model) {
 		
 		model.addAttribute("user", userRepository.findOne(id));
 		return "user/updateForm";
+	}
+	
+	@PutMapping("/{id}")
+	public String update(@PathVariable Long id, User newUser) {
+		
+		User user = userRepository.findOne(id);
+		user.update(newUser);
+		userRepository.save(user);
+		return "redirect:/users";
 	}
 }
