@@ -50,19 +50,27 @@ sudo apt-get install git
 
 **git 데이터 가져오기
 git clone https://github.com/baekgor7/shbt.git
+or
+git pull
 
-**소스 빌드
+**소스 빌드(머스터시 템플릿 오류 : include 폴더 못찾음)
 cd /home/shbt/shbt/shbt-board/
 ./mvnw clean package
 
-**웹서버 시작
+**웹서버 시작(머스터시 템플릿 오류 : include 폴더 못찾음)
 cd /home/shbt/shbt/shbt-board/target/
 java -jar shbt-board-1.0.jar
+
+**웹서버 시작
+cd /home/shbt/shbt/shbt-board/
+./mvnw spring-boot:run
 
 **8080 포트 열기
 sudo ufw enable
 sudo ufw status verbose
 sudo ufw allow 8080/tcp
+
+
 
 
 
