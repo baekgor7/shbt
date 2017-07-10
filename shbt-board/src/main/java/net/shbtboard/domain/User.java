@@ -25,6 +25,9 @@ public class User {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
+	public String getPw() {
+		return pw;
+	}
 	public void setUserNm(String userNm) {
 		this.userNm = userNm;
 	}
