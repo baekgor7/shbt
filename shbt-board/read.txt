@@ -70,7 +70,10 @@ sudo ufw enable
 sudo ufw status verbose
 sudo ufw allow 8080/tcp
 
-
+**톰켓설치
+wget http://apache.tt.co.kr/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz
+tar -xvf apache-tomcat-8.5.16.tar.gz
+ln -s apache-tomcat-8.5.16 tomcat     ---> 심볼릭링크 거는 방법
 
 
 
