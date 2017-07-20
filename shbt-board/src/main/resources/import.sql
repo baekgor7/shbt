@@ -1,2 +1,5 @@
-INSERT INTO USER (USER_ID, PW, USER_NM, EMAIL) VALUES ('aaa', 'pwaaa', '홍길동', 'aa@aa.com');
-INSERT INTO USER (USER_ID, PW, USER_NM, EMAIL) VALUES ('bbb', 'pwbbb', '임꺽정', 'bb@bb.com');
+INSERT INTO USER (ID, USER_ID, PW, USER_NM, EMAIL) VALUES ('1', 'aaa', 'pwaaa', '홍길동', 'aa@aa.com');
+INSERT INTO USER (ID, USER_ID, PW, USER_NM, EMAIL) VALUES ('2', 'bbb', 'pwbbb', '임꺽정', 'bb@bb.com');
+
+INSERT INTO QUESTION (ID, WRITER_ID, TITLE, CONTENTS, CREATE_DATE) VALUES ('1', '1', 'test1', 'test1 test1', CURRENT_TIMESTAMP());
+INSERT INTO QUESTION (ID, WRITER_ID, TITLE, CONTENTS, CREATE_DATE) VALUES ('2', '2', 'test2', 'test2 test2', CURRENT_TIMESTAMP());
