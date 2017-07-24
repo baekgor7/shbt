@@ -41,6 +41,7 @@ public class QuestionController {
 		
 		User sessionUser = HttpSessionUtils.getUserFromSession(session);
 		Question newQuestion = new Question(sessionUser, title, contents);
+		System.out.println("newQuestion.toString()==========="+newQuestion.toString());
 		questionRepository.save(newQuestion);
 		
 		return "redirect:/";
@@ -50,7 +51,7 @@ public class QuestionController {
 	public String show(@PathVariable Long id, Model model) {
 		
 		Question question = questionRepository.findOne(id);
-		model.addAttribute(question);
+		model.addAttribute(question);	
 		return "/qna/show";
 	}
 	
