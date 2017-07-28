@@ -32,10 +32,11 @@ public class ApiAnswerController {
 		if(!HttpSessionUtils.isLoginUser(session)) {
 			return null;
 		}
-		System.out.println("ApiAnswerController class========================"+contents);
+		
 		User loginUser = HttpSessionUtils.getUserFromSession(session);
 		Question question = questionRepository.findOne(questionId);
 		Answer answer = new Answer(loginUser, question, contents); 
+		question.addAnswer();
 		return answerRepository.save(answer);
 	}
 	
@@ -53,6 +54,9 @@ public class ApiAnswerController {
 		}
 		
 		answerRepository.delete(id);
+		Question question = questionRepository.findOne(questionId);
+		question.deleteAnswer();
+		questionRepository.save(question);
 		return Result.ok();
 	}
 }
